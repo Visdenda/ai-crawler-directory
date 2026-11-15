@@ -1,5 +1,5 @@
 {
-  "name": "ai-crawler-directory",
+  "name": "@visdenda/ai-crawler-directory",
   "version": "0.1.0",
   "description": "Open directory of AI crawlers, search bots and training agents: robots.txt tokens, user agents, reverse-DNS suffixes and vendor sources.",
   "type": "module",

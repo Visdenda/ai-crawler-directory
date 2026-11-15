@@ -2,7 +2,7 @@
 
 An open, versioned directory of **AI crawlers, search bots and training agents** — with the robots.txt token, the documented user agent, reverse-DNS suffixes, IP-range sources and a link to the vendor's own documentation for every entry.
 
-[![npm version](https://img.shields.io/npm/v/ai-crawler-directory)](https://www.npmjs.com/package/ai-crawler-directory)
+[![npm version](https://img.shields.io/npm/v/@visdenda/ai-crawler-directory)](https://www.npmjs.com/package/@visdenda/ai-crawler-directory)
 [![CI](https://github.com/liuliuliu-git/ai-crawler-directory/actions/workflows/ci.yml/badge.svg)](https://github.com/liuliuliu-git/ai-crawler-directory/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
@@ -13,7 +13,7 @@ An open, versioned directory of **AI crawlers, search bots and training agents**
 ## Install
 
 ```sh
-npm install ai-crawler-directory
+npm install @visdenda/ai-crawler-directory
 ```
 
 The package ships ESM with TypeScript types and has no runtime dependencies.
@@ -27,7 +27,7 @@ import {
   crawlerEntryByAgent,
   robotsTokensOf,
   toCsv,
-} from "ai-crawler-directory";
+} from "@visdenda/ai-crawler-directory";
 
 console.log(CRAWLER_DIRECTORY_VERSION); // "2026-11"
 console.log(CRAWLER_DIRECTORY.length); // 63
