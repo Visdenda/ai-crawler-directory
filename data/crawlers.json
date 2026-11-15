@@ -1,0 +1,1774 @@
+{
+  "version": "2026-11",
+  "generatedAt": "2026-11-13",
+  "count": 63,
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "homepage": "https://visdenda.com/crawlers",
+  "csv": "https://visdenda.com/crawlers.csv",
+  "entries": [
+    {
+      "slug": "alibaba-qwen-user",
+      "provider": "Alibaba",
+      "agent": "Qwen-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Qwen/Tongyi; Qwen-User fetches for user questions, QwenBot/TongyiBot collect training data.",
+      "description": "Fetches a page when a Qwen user asks a question needing web context.",
+      "userAgents": [
+        "Qwen-User"
+      ],
+      "robotsToken": "Qwen-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Qwen web search",
+          "href": "https://help.aliyun.com/en/model-studio/web-search-agent-guide"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "amazon-amzn-user",
+      "provider": "Amazon",
+      "agent": "Amzn-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Alexa and Amazon shopping AI; Amazonbot collects training data, Amzn-User fetches pages for user questions.",
+      "description": "Fetches a page for an Amazon AI assistant answering a user question.",
+      "userAgents": [
+        "Amzn-User"
+      ],
+      "robotsToken": "Amzn-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://developer.amazon.com/amazonbot/live-ip-addresses/"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "About AmazonBot",
+          "href": "https://developer.amazon.com/amazonbot"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "anthropic-claude-user",
+      "provider": "Anthropic",
+      "agent": "Claude-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Claude; separates user-triggered fetches, search indexing and training crawlers into distinct user agents.",
+      "description": "Fetches a page when a Claude user asks for up-to-date web information.",
+      "userAgents": [
+        "Claude-User"
+      ],
+      "robotsToken": "Claude-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "staticIpRanges": [
+        "160.79.104.0/21"
+      ],
+      "sources": [
+        {
+          "label": "Anthropic crawler docs",
+          "href": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        },
+        {
+          "label": "Anthropic bot ranges",
+          "href": "https://claude.com/crawling/bots.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "duckduckgo-duckassistbot",
+      "provider": "DuckDuckGo",
+      "agent": "DuckAssistBot",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates DuckDuckGo Search and Duck.ai; DuckAssistBot fetches pages to draft AI-assisted answers.",
+      "description": "Fetches pages to draft Duck.ai's AI-assisted answers.",
+      "userAgents": [
+        "DuckAssistBot"
+      ],
+      "robotsToken": "DuckAssistBot",
+      "rdnsSuffixes": [
+        "duckduckgo.com"
+      ],
+      "ipRangeUrls": [
+        "https://duckduckgo.com/duckassistbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "DuckAssistBot help",
+          "href": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+        },
+        {
+          "label": "DuckAssistBot ranges",
+          "href": "https://duckduckgo.com/duckassistbot.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-agent",
+      "provider": "Google",
+      "agent": "Google-Agent",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Fetches a page when a Google agent product runs a user task that needs it.",
+      "userAgents": [
+        "Google-Agent"
+      ],
+      "robotsToken": "Google-Agent",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-notebooklm",
+      "provider": "Google",
+      "agent": "Google-NotebookLM",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Fetches sources a user adds to a NotebookLM notebook.",
+      "userAgents": [
+        "Google-NotebookLM"
+      ],
+      "robotsToken": "Google-NotebookLM",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-read-aloud",
+      "provider": "Google",
+      "agent": "Google-Read-Aloud",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Fetches a page to read it aloud to a user.",
+      "userAgents": [
+        "Google-Read-Aloud"
+      ],
+      "robotsToken": "Google-Read-Aloud",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-googleagent",
+      "provider": "Google",
+      "agent": "GoogleAgent",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Alias user agent for Google agent fetches; match both tokens to avoid split rows.",
+      "userAgents": [
+        "GoogleAgent"
+      ],
+      "robotsToken": "GoogleAgent",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "meta-meta-externalfetcher",
+      "provider": "Meta",
+      "agent": "Meta-ExternalFetcher",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Fetches a page when a Meta AI user asks a question needing web context.",
+      "userAgents": [
+        "meta-externalfetcher"
+      ],
+      "robotsToken": "Meta-ExternalFetcher",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "microsoft-copilot",
+      "provider": "Microsoft",
+      "agent": "Copilot",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Bing, MSN and Copilot; Bingbot indexes for Bing search, Copilot fetches pages when a user asks.",
+      "description": "Fetches a page when a Microsoft Copilot user asks a question needing web context.",
+      "userAgents": [
+        "Copilot"
+      ],
+      "robotsToken": "Copilot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [
+        "52.250.92.252/30",
+        "52.224.250.216/30",
+        "52.245.230.216/30",
+        "20.141.117.64/30",
+        "20.54.41.208/30",
+        "51.105.159.88/30",
+        "52.139.188.212/30",
+        "20.43.146.44/30"
+      ],
+      "sources": [
+        {
+          "label": "Verify Bingbot",
+          "href": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+        },
+        {
+          "label": "Bingbot IP ranges",
+          "href": "https://www.bing.com/toolbox/bingbot.json"
+        },
+        {
+          "label": "Microsoft 365 Copilot connector IP ranges",
+          "href": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "mistral-mistralai-user",
+      "provider": "Mistral",
+      "agent": "MistralAI-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index.",
+      "description": "Fetches a page when a Le Chat user asks a question needing web context.",
+      "userAgents": [
+        "MistralAI-User"
+      ],
+      "robotsToken": "MistralAI-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://mistral.ai/mistralai-user-ips.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Mistral crawler docs",
+          "href": "https://docs.mistral.ai/robots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "moonshot-ai-kimi-user",
+      "provider": "Moonshot AI",
+      "agent": "Kimi-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Kimi; separates user-triggered fetches, search indexing and training crawlers.",
+      "description": "Fetches a page when a Kimi user asks a question needing web context.",
+      "userAgents": [
+        "Kimi-User"
+      ],
+      "robotsToken": "Kimi-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://www.kimi.com/policies/kimi-user.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Kimi crawlers",
+          "href": "https://www.kimi.com/policies/kimi-crawlers"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "openai-chatgpt-user",
+      "provider": "OpenAI",
+      "agent": "ChatGPT-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates ChatGPT and the OpenAI API; separates user-triggered fetches, search indexing, ads fetching and training crawlers into distinct user agents.",
+      "description": "Fetches a page when a ChatGPT user asks a question that needs live web context.",
+      "userAgents": [
+        "ChatGPT-User"
+      ],
+      "robotsToken": "ChatGPT-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://openai.com/chatgpt-user.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "OpenAI crawler docs",
+          "href": "https://developers.openai.com/api/docs/bots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "perplexity-perplexity-user",
+      "provider": "Perplexity",
+      "agent": "Perplexity-User",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates the Perplexity answer engine; PerplexityBot indexes for AI search, Perplexity-User fetches pages when a user asks.",
+      "description": "Fetches a page when a Perplexity user asks a question that needs the cited page.",
+      "userAgents": [
+        "Perplexity-User"
+      ],
+      "robotsToken": "Perplexity-User",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://www.perplexity.com/perplexity-user.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Perplexity crawler docs",
+          "href": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-grok-deepsearch",
+      "provider": "xAI",
+      "agent": "Grok-DeepSearch",
+      "kind": "http-ua",
+      "category": "answer-fetch",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Fetches pages during a Grok user's deep search run.",
+      "userAgents": [
+        "Grok-DeepSearch"
+      ],
+      "robotsToken": "Grok-DeepSearch",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "amazon-amzn-searchbot",
+      "provider": "Amazon",
+      "agent": "Amzn-SearchBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Alexa and Amazon shopping AI; Amazonbot collects training data, Amzn-User fetches pages for user questions.",
+      "description": "Indexes pages for Amazon's AI search surfaces.",
+      "userAgents": [
+        "Amzn-SearchBot"
+      ],
+      "robotsToken": "Amzn-SearchBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "About AmazonBot",
+          "href": "https://developer.amazon.com/amazonbot"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "anthropic-claude-searchbot",
+      "provider": "Anthropic",
+      "agent": "Claude-SearchBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Claude; separates user-triggered fetches, search indexing and training crawlers into distinct user agents.",
+      "description": "Indexes pages for Claude's web search.",
+      "userAgents": [
+        "Claude-SearchBot"
+      ],
+      "robotsToken": "Claude-SearchBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Anthropic crawler docs",
+          "href": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        },
+        {
+          "label": "Anthropic bot ranges",
+          "href": "https://claude.com/crawling/bots.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "apple-applebot",
+      "provider": "Apple",
+      "agent": "Applebot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Apple Search, Siri and Apple Intelligence; Applebot powers search surfaces and AI training (Applebot-Extended is the opt-out token).",
+      "description": "Powers Apple's search surfaces (Siri, Spotlight) and Apple Intelligence products.",
+      "userAgents": [
+        "Applebot"
+      ],
+      "robotsToken": "Applebot",
+      "rdnsSuffixes": [
+        "applebot.apple.com"
+      ],
+      "ipRangeUrls": [
+        "https://search.developer.apple.com/applebot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "About Applebot",
+          "href": "https://support.apple.com/en-us/119829"
+        },
+        {
+          "label": "Cloudflare Radar Applebot",
+          "href": "https://radar.cloudflare.com/bots/directory/apple"
+        },
+        {
+          "label": "Applebot IP ranges",
+          "href": "https://search.developer.apple.com/applebot.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "meta-meta-webindexer",
+      "provider": "Meta",
+      "agent": "meta-webindexer",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Indexes pages for Meta AI's web index.",
+      "userAgents": [
+        "meta-webindexer"
+      ],
+      "robotsToken": "meta-webindexer",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "mistral-mistralai-index",
+      "provider": "Mistral",
+      "agent": "MistralAI-Index",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index.",
+      "description": "Indexes pages for Mistral's search products.",
+      "userAgents": [
+        "MistralAI-Index"
+      ],
+      "robotsToken": "MistralAI-Index",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://mistral.ai/mistralai-index-ips.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Mistral crawler docs",
+          "href": "https://docs.mistral.ai/robots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "moonshot-ai-kimi-searchbot",
+      "provider": "Moonshot AI",
+      "agent": "Kimi-SearchBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Kimi; separates user-triggered fetches, search indexing and training crawlers.",
+      "description": "Indexes pages for Kimi's web search.",
+      "userAgents": [
+        "Kimi-SearchBot"
+      ],
+      "robotsToken": "Kimi-SearchBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://www.kimi.com/policies/kimi-searchbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Kimi crawlers",
+          "href": "https://www.kimi.com/policies/kimi-crawlers"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "openai-oai-searchbot",
+      "provider": "OpenAI",
+      "agent": "OAI-SearchBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates ChatGPT and the OpenAI API; separates user-triggered fetches, search indexing, ads fetching and training crawlers into distinct user agents.",
+      "description": "Indexes pages for ChatGPT search results.",
+      "userAgents": [
+        "OAI-SearchBot"
+      ],
+      "robotsToken": "OAI-SearchBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://openai.com/searchbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "OpenAI crawler docs",
+          "href": "https://developers.openai.com/api/docs/bots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "perplexity-perplexitybot",
+      "provider": "Perplexity",
+      "agent": "PerplexityBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates the Perplexity answer engine; PerplexityBot indexes for AI search, Perplexity-User fetches pages when a user asks.",
+      "description": "Indexes pages for the Perplexity answer engine.",
+      "userAgents": [
+        "PerplexityBot"
+      ],
+      "robotsToken": "PerplexityBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://www.perplexity.com/perplexitybot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Perplexity crawler docs",
+          "href": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-xai-searchbot",
+      "provider": "xAI",
+      "agent": "xAI-SearchBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Indexes pages to appear in Grok's search results.",
+      "userAgents": [
+        "xAI-SearchBot"
+      ],
+      "robotsToken": "xAI-SearchBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "you-com-youbot",
+      "provider": "You.com",
+      "agent": "YouBot",
+      "kind": "http-ua",
+      "category": "ai-search",
+      "providerSummary": "Operates the You.com answer engine; YouBot indexes web content for its search products.",
+      "description": "Indexes pages for You.com's answer engine.",
+      "userAgents": [
+        "YouBot"
+      ],
+      "robotsToken": "YouBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "You.com",
+          "href": "https://you.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "alibaba-qwenbot",
+      "provider": "Alibaba",
+      "agent": "QwenBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Qwen/Tongyi; Qwen-User fetches for user questions, QwenBot/TongyiBot collect training data.",
+      "description": "Collects public pages to train Qwen models.",
+      "userAgents": [
+        "QwenBot"
+      ],
+      "robotsToken": "QwenBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Qwen web search",
+          "href": "https://help.aliyun.com/en/model-studio/web-search-agent-guide"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "alibaba-tongyibot",
+      "provider": "Alibaba",
+      "agent": "TongyiBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Qwen/Tongyi; Qwen-User fetches for user questions, QwenBot/TongyiBot collect training data.",
+      "description": "Collects public pages for Alibaba's Tongyi models.",
+      "userAgents": [
+        "TongyiBot"
+      ],
+      "robotsToken": "TongyiBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Qwen web search",
+          "href": "https://help.aliyun.com/en/model-studio/web-search-agent-guide"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "allen-ai-ai2bot",
+      "provider": "Allen AI",
+      "agent": "AI2Bot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Non-profit AI research institute (AI2); AI2Bot collects open corpora for research.",
+      "description": "Allen AI's research crawler collecting open corpora.",
+      "userAgents": [
+        "AI2Bot"
+      ],
+      "robotsToken": "AI2Bot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "AI2 crawling notice",
+          "href": "https://allenai.org/crawler"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "amazon-amazonbot",
+      "provider": "Amazon",
+      "agent": "Amazonbot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Alexa and Amazon shopping AI; Amazonbot collects training data, Amzn-User fetches pages for user questions.",
+      "description": "Collects public pages for Amazon's AI services.",
+      "userAgents": [
+        "Amazonbot"
+      ],
+      "robotsToken": "Amazonbot",
+      "rdnsSuffixes": [
+        "amazonbot.com"
+      ],
+      "ipRangeUrls": [
+        "https://developer.amazon.com/amazonbot/ip-addresses/"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "About AmazonBot",
+          "href": "https://developer.amazon.com/amazonbot"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "anthropic-claudebot",
+      "provider": "Anthropic",
+      "agent": "ClaudeBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Claude; separates user-triggered fetches, search indexing and training crawlers into distinct user agents.",
+      "description": "Collects public pages that may be used to train Anthropic models.",
+      "userAgents": [
+        "ClaudeBot"
+      ],
+      "robotsToken": "ClaudeBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://claude.com/crawling/bots.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Anthropic crawler docs",
+          "href": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+        },
+        {
+          "label": "Anthropic bot ranges",
+          "href": "https://claude.com/crawling/bots.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "apple-applebot-extended",
+      "provider": "Apple",
+      "agent": "Applebot-Extended",
+      "kind": "robots-token",
+      "category": "training",
+      "providerSummary": "Operates Apple Search, Siri and Apple Intelligence; Applebot powers search surfaces and AI training (Applebot-Extended is the opt-out token).",
+      "description": "robots.txt opt-out token for Apple's AI training; has no user agent of its own.",
+      "userAgents": [
+        "Applebot-Extended"
+      ],
+      "robotsToken": "Applebot-Extended",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "About Applebot",
+          "href": "https://support.apple.com/en-us/119829"
+        },
+        {
+          "label": "Cloudflare Radar Applebot",
+          "href": "https://radar.cloudflare.com/bots/directory/apple"
+        },
+        {
+          "label": "Applebot IP ranges",
+          "href": "https://search.developer.apple.com/applebot.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "baidu-erniebot",
+      "provider": "Baidu",
+      "agent": "ERNIEBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Baidu Search and ERNIE; Baiduspider indexes for search, ERNIEBot/YiyanBot collect training data.",
+      "description": "Collects public pages for Baidu's ERNIE models.",
+      "userAgents": [
+        "ERNIEBot"
+      ],
+      "robotsToken": "ERNIEBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Baidu robots help",
+          "href": "https://www.baidu.com/search/robots_english.html"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "baidu-yiyanbot",
+      "provider": "Baidu",
+      "agent": "YiyanBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Baidu Search and ERNIE; Baiduspider indexes for search, ERNIEBot/YiyanBot collect training data.",
+      "description": "Collects public pages for Baidu's Yiyan (ERNIE Bot) assistant.",
+      "userAgents": [
+        "YiyanBot"
+      ],
+      "robotsToken": "YiyanBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Baidu robots help",
+          "href": "https://www.baidu.com/search/robots_english.html"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "bytedance-bytespider",
+      "provider": "ByteDance",
+      "agent": "Bytespider",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates TikTok and Doubao; TikTokSpider indexes web content, Bytespider/Doubaobot collect training data.",
+      "description": "ByteDance's training crawler; the noisiest AI crawler on many logs.",
+      "userAgents": [
+        "Bytespider"
+      ],
+      "robotsToken": "Bytespider",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "ByteDance",
+          "href": "https://www.bytedance.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "bytedance-doubaobot",
+      "provider": "ByteDance",
+      "agent": "Doubaobot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates TikTok and Doubao; TikTokSpider indexes web content, Bytespider/Doubaobot collect training data.",
+      "description": "Collects public pages for ByteDance's Doubao assistant.",
+      "userAgents": [
+        "Doubaobot"
+      ],
+      "robotsToken": "Doubaobot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "ByteDance",
+          "href": "https://www.bytedance.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "cohere-cohere-ai",
+      "provider": "Cohere",
+      "agent": "cohere-ai",
+      "kind": "robots-token",
+      "category": "training",
+      "providerSummary": "Operates Command models; cohere-ai is a robots.txt opt-out token, the training crawler carries its own user agent.",
+      "description": "robots.txt opt-out token for Cohere; has no user agent of its own.",
+      "userAgents": [
+        "cohere-ai"
+      ],
+      "robotsToken": "cohere-ai",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Cohere",
+          "href": "https://cohere.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "cohere-cohere-training-data-crawler",
+      "provider": "Cohere",
+      "agent": "cohere-training-data-crawler",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Command models; cohere-ai is a robots.txt opt-out token, the training crawler carries its own user agent.",
+      "description": "Collects public pages for Cohere training datasets.",
+      "userAgents": [
+        "cohere-training-data-crawler"
+      ],
+      "robotsToken": "cohere-training-data-crawler",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Cohere",
+          "href": "https://cohere.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "common-crawl-ccbot",
+      "provider": "Common Crawl",
+      "agent": "CCBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Maintains the Common Crawl open web corpus; CCBot fetches pages for the quarterly crawl snapshots.",
+      "description": "Fetches pages for Common Crawl's open quarterly web corpus.",
+      "userAgents": [
+        "CCBot"
+      ],
+      "robotsToken": "CCBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://index.commoncrawl.org/ccbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "CCBot",
+          "href": "https://commoncrawl.org/ccbot"
+        },
+        {
+          "label": "CCBot ranges",
+          "href": "https://index.commoncrawl.org/ccbot.json"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "deepseek-deepseekbot",
+      "provider": "DeepSeek",
+      "agent": "DeepSeekBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates DeepSeek models; DeepSeekBot collects public pages for training (UA-only, no published IP ranges).",
+      "description": "Collects public pages to train DeepSeek models (UA-only, no published IP ranges).",
+      "userAgents": [
+        "DeepSeekBot"
+      ],
+      "robotsToken": "DeepSeekBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "DeepSeek",
+          "href": "https://www.deepseek.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-cloudvertexbot",
+      "provider": "Google",
+      "agent": "Google-CloudVertexBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Fetches public pages for Vertex AI customers building models.",
+      "userAgents": [
+        "Google-CloudVertexBot"
+      ],
+      "robotsToken": "Google-CloudVertexBot",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        },
+        {
+          "label": "Cloudflare Radar Google-CloudVertexBot",
+          "href": "https://radar.cloudflare.com/bots/directory/google-cloudvertexbot"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-extended",
+      "provider": "Google",
+      "agent": "Google-Extended",
+      "kind": "robots-token",
+      "category": "training",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "robots.txt opt-out token for Gemini app training; has no user agent of its own (fetches come as Googlebot).",
+      "userAgents": [
+        "Google-Extended"
+      ],
+      "robotsToken": "Google-Extended",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        },
+        {
+          "label": "Google-Extended controls",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers#google-extended"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-googleother",
+      "provider": "Google",
+      "agent": "GoogleOther",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Generic Google crawler used by unspecified product teams.",
+      "userAgents": [
+        "GoogleOther"
+      ],
+      "robotsToken": "GoogleOther",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        },
+        {
+          "label": "Cloudflare Radar GoogleOther",
+          "href": "https://radar.cloudflare.com/bots/directory/google-other"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "meta-facebookbot",
+      "provider": "Meta",
+      "agent": "FacebookBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Collects public pages to train Meta's AI models.",
+      "userAgents": [
+        "FacebookBot"
+      ],
+      "robotsToken": "FacebookBot",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "meta-meta-externalagent",
+      "provider": "Meta",
+      "agent": "Meta-ExternalAgent",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Collects public pages to train Meta's AI models.",
+      "userAgents": [
+        "meta-externalagent"
+      ],
+      "robotsToken": "Meta-ExternalAgent",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "moonshot-ai-kimibot",
+      "provider": "Moonshot AI",
+      "agent": "KimiBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates Kimi; separates user-triggered fetches, search indexing and training crawlers.",
+      "description": "Collects public pages to train Kimi models.",
+      "userAgents": [
+        "KimiBot"
+      ],
+      "robotsToken": "KimiBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://www.kimi.com/policies/kimibot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Kimi crawlers",
+          "href": "https://www.kimi.com/policies/kimi-crawlers"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "openai-gptbot",
+      "provider": "OpenAI",
+      "agent": "GPTBot",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates ChatGPT and the OpenAI API; separates user-triggered fetches, search indexing, ads fetching and training crawlers into distinct user agents.",
+      "description": "Collects public pages that may be used to train OpenAI models.",
+      "userAgents": [
+        "GPTBot"
+      ],
+      "robotsToken": "GPTBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [
+        "https://openai.com/gptbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "OpenAI crawler docs",
+          "href": "https://developers.openai.com/api/docs/bots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "zhipu-ai-chatglm-spider",
+      "provider": "Zhipu AI",
+      "agent": "ChatGLM-Spider",
+      "kind": "http-ua",
+      "category": "training",
+      "providerSummary": "Operates ChatGLM/GLM models; ChatGLM-Spider collects public pages for training.",
+      "description": "Collects public pages to train GLM/ChatGLM models.",
+      "userAgents": [
+        "ChatGLM-Spider"
+      ],
+      "robotsToken": "ChatGLM-Spider",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Zhipu AI",
+          "href": "https://www.zhipuai.cn/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "baidu-baiduspider",
+      "provider": "Baidu",
+      "agent": "Baiduspider",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Baidu Search and ERNIE; Baiduspider indexes for search, ERNIEBot/YiyanBot collect training data.",
+      "description": "The main Baidu Search indexing crawler.",
+      "userAgents": [
+        "Baiduspider"
+      ],
+      "robotsToken": "Baiduspider",
+      "rdnsSuffixes": [
+        "baidu.com",
+        "baidu.jp"
+      ],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Baidu robots help",
+          "href": "https://www.baidu.com/search/robots_english.html"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "bytedance-tiktokspider",
+      "provider": "ByteDance",
+      "agent": "TikTokSpider",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates TikTok and Doubao; TikTokSpider indexes web content, Bytespider/Doubaobot collect training data.",
+      "description": "Indexes web content for TikTok's in-app search.",
+      "userAgents": [
+        "TikTokSpider"
+      ],
+      "robotsToken": "TikTokSpider",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "ByteDance",
+          "href": "https://www.bytedance.com/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-google-inspectiontool",
+      "provider": "Google",
+      "agent": "Google-InspectionTool",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "Google's debugging crawler behind Search Console live tests and inspections.",
+      "userAgents": [
+        "Google-InspectionTool"
+      ],
+      "robotsToken": "Google-InspectionTool",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "google-googlebot",
+      "provider": "Google",
+      "agent": "Googlebot",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Google Search, Gemini and agent products; publishes per-purpose crawlers verified by IP ranges and reverse DNS.",
+      "description": "The main Google Search indexing crawler.",
+      "userAgents": [
+        "Googlebot"
+      ],
+      "robotsToken": "Googlebot",
+      "rdnsSuffixes": [
+        "googlebot.com",
+        "google.com"
+      ],
+      "ipRangeUrls": [
+        "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/special-crawlers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json",
+        "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Google crawler overview",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers"
+        },
+        {
+          "label": "Verify Google crawlers",
+          "href": "https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests"
+        },
+        {
+          "label": "Cloudflare on Googlebot and AI Overviews",
+          "href": "https://blog.cloudflare.com/from-googlebot-to-gptbot-whos-crawling-your-site-in-2025/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "microsoft-bingbot",
+      "provider": "Microsoft",
+      "agent": "BingBot",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Bing, MSN and Copilot; Bingbot indexes for Bing search, Copilot fetches pages when a user asks.",
+      "description": "The main Bing indexing crawler.",
+      "userAgents": [
+        "Bingbot"
+      ],
+      "robotsToken": "BingBot",
+      "rdnsSuffixes": [
+        "search.msn.com"
+      ],
+      "ipRangeUrls": [
+        "https://www.bing.com/toolbox/bingbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Verify Bingbot",
+          "href": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+        },
+        {
+          "label": "Bingbot IP ranges",
+          "href": "https://www.bing.com/toolbox/bingbot.json"
+        },
+        {
+          "label": "Microsoft 365 Copilot connector IP ranges",
+          "href": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "microsoft-msnbot",
+      "provider": "Microsoft",
+      "agent": "msnbot",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Bing, MSN and Copilot; Bingbot indexes for Bing search, Copilot fetches pages when a user asks.",
+      "description": "Legacy Microsoft crawler that still appears in logs and feeds MSN/Bing infrastructure.",
+      "userAgents": [
+        "msnbot"
+      ],
+      "robotsToken": "msnbot",
+      "rdnsSuffixes": [
+        "search.msn.com"
+      ],
+      "ipRangeUrls": [
+        "https://www.bing.com/toolbox/bingbot.json"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Verify Bingbot",
+          "href": "https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26"
+        },
+        {
+          "label": "Bingbot IP ranges",
+          "href": "https://www.bing.com/toolbox/bingbot.json"
+        },
+        {
+          "label": "Microsoft 365 Copilot connector IP ranges",
+          "href": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/deployment-overview"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "yandex-yandexbot",
+      "provider": "Yandex",
+      "agent": "YandexBot",
+      "kind": "http-ua",
+      "category": "search-engine",
+      "providerSummary": "Operates Yandex Search; YandexBot is its main indexing crawler and publishes reverse-DNS suffixes for hit verification.",
+      "description": "The main Yandex Search indexing crawler.",
+      "userAgents": [
+        "YandexBot"
+      ],
+      "robotsToken": "YandexBot",
+      "rdnsSuffixes": [
+        "yandex.ru",
+        "yandex.net",
+        "yandex.com"
+      ],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Yandex: checking the robot",
+          "href": "https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html"
+        },
+        {
+          "label": "Yandex IP check",
+          "href": "https://yandex.com/support/webmaster/en/indexing-options/ip-check.html"
+        }
+      ],
+      "reviewedAt": "2026-11-13"
+    },
+    {
+      "slug": "meta-meta-externalads",
+      "provider": "Meta",
+      "agent": "meta-externalads",
+      "kind": "http-ua",
+      "category": "ads",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Fetches pages for Meta's ads-related surfaces.",
+      "userAgents": [
+        "meta-externalads"
+      ],
+      "robotsToken": "meta-externalads",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "openai-oai-adsbot",
+      "provider": "OpenAI",
+      "agent": "OAI-AdsBot",
+      "kind": "http-ua",
+      "category": "ads",
+      "providerSummary": "Operates ChatGPT and the OpenAI API; separates user-triggered fetches, search indexing, ads fetching and training crawlers into distinct user agents.",
+      "description": "Fetches pages for OpenAI's advertising-related surfaces.",
+      "userAgents": [
+        "OAI-AdsBot"
+      ],
+      "robotsToken": "OAI-AdsBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "OpenAI crawler docs",
+          "href": "https://developers.openai.com/api/docs/bots"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "alibaba-aliyunbot",
+      "provider": "Alibaba",
+      "agent": "AliyunBot",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Qwen/Tongyi; Qwen-User fetches for user questions, QwenBot/TongyiBot collect training data.",
+      "description": "Alibaba Cloud crawler observed in the wild; purpose not officially documented.",
+      "userAgents": [
+        "AliyunBot"
+      ],
+      "robotsToken": "AliyunBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Qwen web search",
+          "href": "https://help.aliyun.com/en/model-studio/web-search-agent-guide"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "meta-facebookexternalhit",
+      "provider": "Meta",
+      "agent": "facebookexternalhit",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Facebook, Instagram and Meta AI; publishes training, ads, fetcher and web-index agents.",
+      "description": "Fetches link previews when users share URLs on Meta apps; not AI training, listed for classification completeness.",
+      "userAgents": [
+        "facebookexternalhit"
+      ],
+      "robotsToken": "facebookexternalhit",
+      "rdnsSuffixes": [
+        "fbsv.net"
+      ],
+      "ipRangeUrls": [
+        "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+      ],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "Meta web crawlers",
+          "href": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-grok",
+      "provider": "xAI",
+      "agent": "Grok",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Generic Grok user agent seen in server logs; xAI has not documented which Grok product emits it.",
+      "userAgents": [
+        "Grok"
+      ],
+      "robotsToken": "Grok",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-grokbot",
+      "provider": "xAI",
+      "agent": "GrokBot",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Grok-branded bot token observed in the wild; xAI has not published whether it fetches for answers, search or training.",
+      "userAgents": [
+        "GrokBot"
+      ],
+      "robotsToken": "GrokBot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-xai-bot",
+      "provider": "xAI",
+      "agent": "xAI-Bot",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Short xAI bot token observed in logs; it is not covered by xAI's public crawler documentation.",
+      "userAgents": [
+        "xAI-Bot"
+      ],
+      "robotsToken": "xAI-Bot",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-xai-grok",
+      "provider": "xAI",
+      "agent": "xAI-Grok",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Hyphenated xAI/Grok token seen in logs; no official document ties it to a specific Grok surface.",
+      "userAgents": [
+        "xAI-Grok"
+      ],
+      "robotsToken": "xAI-Grok",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "slug": "xai-xai-web-crawler",
+      "provider": "xAI",
+      "agent": "xAI-Web-Crawler",
+      "kind": "http-ua",
+      "category": "unknown",
+      "providerSummary": "Operates Grok; publishes several crawler user agents whose individual purposes are not fully documented.",
+      "description": "Descriptive xAI crawler token seen in the wild; xAI has not documented its crawl purpose.",
+      "userAgents": [
+        "xAI-Web-Crawler"
+      ],
+      "robotsToken": "xAI-Web-Crawler",
+      "rdnsSuffixes": [],
+      "ipRangeUrls": [],
+      "staticIpRanges": [],
+      "sources": [
+        {
+          "label": "xAI",
+          "href": "https://x.ai/"
+        }
+      ],
+      "reviewedAt": "2026-11-05"
+    }
+  ]
+}

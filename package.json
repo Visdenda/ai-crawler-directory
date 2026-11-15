@@ -1,0 +1,60 @@
+{
+  "name": "ai-crawler-directory",
+  "version": "0.1.0",
+  "description": "Open directory of AI crawlers, search bots and training agents: robots.txt tokens, user agents, reverse-DNS suffixes and vendor sources.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./data/crawlers.json": "./data/crawlers.json",
+    "./data/crawlers.csv": "./data/crawlers.csv"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE",
+    "LICENSE-DATA"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:data": "node scripts/build-data.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "prepublishOnly": "npm run build && npm run build:data && npm test"
+  },
+  "keywords": [
+    "ai-crawlers",
+    "crawler-directory",
+    "robots-txt",
+    "user-agent",
+    "gptbot",
+    "claudebot",
+    "perplexitybot",
+    "llm",
+    "seo",
+    "dataset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuliuliu-git/ai-crawler-directory.git"
+  },
+  "homepage": "https://visdenda.com/crawlers",
+  "bugs": {
+    "url": "https://github.com/liuliuliu-git/ai-crawler-directory/issues"
+  },
+  "license": "MIT",
+  "author": "Visdenda",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "@types/node": "^24.0.0"
+  }
+}

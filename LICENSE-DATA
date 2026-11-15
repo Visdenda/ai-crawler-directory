@@ -1,0 +1,16 @@
+The dataset in this repository — the crawler entries in `src/directory.ts`,
+`data/crawlers.json` and `data/crawlers.csv` — is licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+License: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt the data for any purpose, provided that you
+give appropriate credit, link to the license, and indicate if changes were
+made. Attribution must name "Visdenda" and link to
+https://visdenda.com/crawlers.
+
+The TypeScript source code that reads and validates the dataset is licensed
+under the MIT License (see LICENSE).
+
+Vendor documentation links in the dataset remain the property of their
+respective vendors.
