@@ -1,27 +1,41 @@
 name: Publish
 
-on:
+# 发布 @visdenda/ai-crawler-directory（公开 scoped 包）。
+#
+# 与 @visdenda/agent-watch 同一个机制：npm Trusted Publishing（OIDC），不需要任何
+# 长期令牌。一次性前置（在 npm 网页做）：包的 Settings → Trusted Publisher →
+# GitHub Actions，填 owner `liuliuliu-git`、repo `ai-crawler-directory`、
+# workflow 文件名 `publish.yml`。之后推 `v*` tag 即可发布。
+#
+# 为什么可以是 --provenance：本仓是公开仓库，sigstore 来源证明要求源码仓库公开。
+"on":
   push:
     tags: ["v*"]
 
 permissions:
   contents: read
+  # OIDC：npm 用这个权限签发短期发布凭证
   id-token: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # Trusted Publishing 要求 npm CLI >= 11.5.1；Node 26 自带 npm 已达标。
+          node-version: 26
           registry-url: https://registry.npmjs.org
           cache: npm
+      - name: Check npm CLI floor (trusted publishing needs >= 11.5.1)
+        run: |
+          npmv=$(npm --version)
+          echo "node $(node --version) / npm $npmv"
+          node -e "const [a,b]=process.argv[1].split('.').map(Number); if (a<11||(a===11&&b<5)) { console.error('npm '+process.argv[1]+' < 11.5.1: trusted publishing will fail'); process.exit(1); }" "$npmv"
       - run: npm ci
       - run: npm run build
       - run: npm run build:data
       - run: npm test
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

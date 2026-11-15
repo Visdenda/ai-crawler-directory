@@ -95,6 +95,14 @@ The repository commits both exports, regenerated with `npm run build:data`:
 
 They mirror the public website endpoints. `npm run build:data && git diff --exit-code -- data` is enforced in CI.
 
+## Related: the probe SDK is a separate package
+
+This repository is **data**. Recording these crawlers on your own site is a different job, done by a separate zero-dependency SDK:
+
+- [`@visdenda/agent-watch`](https://www.npmjs.com/package/@visdenda/agent-watch) — server-side crawler probe for Workers, Node, Hono, Next.js and Astro, plus Markdown negotiation.
+
+The two are deliberately separate: the SDK ships **no user-agent list** (matching happens server-side, so a new crawler never requires an SDK upgrade), while this package is the versioned, citable dataset. Installing the probe does not require this package, and consuming the data does not pull in runtime code.
+
 ## Contributing
 
 Open an issue or pull request when a vendor publishes a new crawler, changes a token, or documents IP ranges that are missing.
