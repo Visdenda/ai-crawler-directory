@@ -30,7 +30,7 @@ import {
 } from "@visdenda/ai-crawler-directory";
 
 console.log(CRAWLER_DIRECTORY_VERSION); // "2026-11"
-console.log(CRAWLER_DIRECTORY.length); // 63
+console.log(CRAWLER_DIRECTORY.length); // number of entries
 
 const gptbot = crawlerEntryByAgent("GPTBot", CRAWLER_DIRECTORY);
 // {
@@ -64,6 +64,7 @@ const csv = toCsv();
 | `userAgents` | User-agent substrings documented by the vendor |
 | `robotsToken` | Value to use in a robots.txt `User-agent:` line |
 | `rdnsSuffixes` | Reverse-DNS suffixes **if the vendor publishes them**; empty means “not published” |
+| `signatureAgents` | Web Bot Auth `Signature-Agent` origins (https, no path); empty means “no signed identity published” |
 | `ipRangeUrls` | Vendor endpoints that publish IP ranges (JSON) |
 | `staticIpRanges` | Ranges the vendor lists inline |
 | `sources` | Vendor documentation backing the entry (https only) |
@@ -115,9 +116,27 @@ npm run build && npm test
 npm run build:data   # regenerate the committed JSON/CSV
 ```
 
+## Releasing
+
+Releases are tag-driven and automatic once the version changes:
+
+1. Bump `version` in `package.json` in the same PR that changes `src/` or `data/`.
+2. Merge to `main`. CI runs the tests, then a `release` job tags `v<version>` and pushes it.
+3. `.github/workflows/publish.yml` builds, tests and publishes to npm with provenance (npm Trusted Publishing / OIDC — no long-lived token).
+
+A tag that already exists is a no-op, so re-pushing `main` publishes nothing. Re-releasing the same version means deleting the tag first. The `release` job also fails when `src/` or `data/` changed without a version bump — otherwise npm would silently keep serving the previous dataset.
+
+One-time setup, already done for this package: on npmjs.com, the package's **Settings → Trusted Publisher** points at this repository and the `publish.yml` workflow.
+
 ## License
 
 - **Code** (the TypeScript in `src/`): MIT — see [LICENSE](LICENSE).
 - **Data** (the crawler entries and generated JSON/CSV): CC BY 4.0 — see [LICENSE-DATA](LICENSE-DATA). Attribution must name **Visdenda** and link to https://visdenda.com/crawlers.
 
 Vendor documentation links remain the property of their vendors.
+
+## Source
+
+This repository is the public source mirror of `@visdenda/ai-crawler-directory`. The directory is
+curated in a private monorepo; changes are mirrored here before a release, and npm publishes from
+this repository with provenance.

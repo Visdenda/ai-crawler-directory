@@ -8,15 +8,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 26
           cache: npm
       - run: npm ci
       - run: npm run build
       - run: npm test
       - run: npm run validate
       - run: npm run build:data
+      # 生成物必须可复现：data/ 与 src/ 不一致时在这里失败，而不是发到 npm 上才发现。
       - run: git diff --exit-code -- data

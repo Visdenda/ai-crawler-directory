@@ -2,7 +2,7 @@ import type { CrawlerDirectoryEntry } from "./types.js";
 import { validateDirectory } from "./validate.js";
 
 /**
- * AI crawler directory seed: 63 entries.
+ * AI crawler directory seed. Entry count is derived from this array; do not hardcode it.
  *
  * Baseline is a 2026-11-05 snapshot of datafa.st/crawlers. Every entry was then
  * re-checked against the vendor's own documentation; YandexBot was added from
@@ -313,7 +313,7 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     kind: "http-ua",
     category: "answer-fetch",
     providerSummary:
-      "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index.",
+      "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index, MistralAI-Training collects training data.",
     description: "Fetches a page when a Le Chat user asks a question needing web context.",
     userAgents: ["MistralAI-User"],
     robotsToken: "MistralAI-User",
@@ -397,6 +397,24 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     staticIpRanges: [],
     sources: [{ label: "xAI", href: "https://x.ai/" }],
     reviewedAt: "2026-11-05",
+  },
+  {
+    slug: "elevenlabs-bot",
+    provider: "ElevenLabs",
+    agent: "ElevenlabsBot",
+    kind: "http-ua",
+    category: "answer-fetch",
+    providerSummary:
+      "Runs voice and chat agents; ElevenlabsBot ingests pages added to an agent's knowledge base, ElevenlabsCrawler collects public content for model training.",
+    description:
+      "Fetches a page a customer adds to an ElevenLabs agent's knowledge base, then on refresh.",
+    userAgents: ["ElevenlabsBot"],
+    robotsToken: "ElevenlabsBot",
+    rdnsSuffixes: [],
+    ipRangeUrls: [],
+    staticIpRanges: [],
+    sources: [{ label: "ElevenLabs bots", href: "https://elevenlabs.io/docs/bots" }],
+    reviewedAt: "2026-11-16",
   },
   {
     slug: "amazon-amzn-searchbot",
@@ -492,7 +510,7 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     kind: "http-ua",
     category: "ai-search",
     providerSummary:
-      "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index.",
+      "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index, MistralAI-Training collects training data.",
     description: "Indexes pages for Mistral's search products.",
     userAgents: ["MistralAI-Index"],
     robotsToken: "MistralAI-Index",
@@ -559,6 +577,48 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
       },
     ],
     reviewedAt: "2026-11-05",
+  },
+  {
+    slug: "exa-exa-searchbot",
+    provider: "Exa",
+    agent: "ExaSearchBot",
+    kind: "http-ua",
+    category: "ai-search",
+    providerSummary:
+      "Operates Exa, an AI-native search engine; ExaSearchBot crawls the public web and signs requests with HTTP Message Signatures.",
+    description:
+      "Discovers and indexes public pages so they can appear in Exa search results and citations.",
+    userAgents: ["ExaSearchBot"],
+    robotsToken: "ExaSearchBot",
+    rdnsSuffixes: [],
+    signatureAgents: ["https://crawler.exa.ai"],
+    ipRangeUrls: [],
+    staticIpRanges: [],
+    sources: [
+      { label: "Exa Search Crawler", href: "https://crawler.exa.ai/" },
+      { label: "Exa crawler FAQ", href: "https://exa.ai/docs/admin/faqs" },
+    ],
+    reviewedAt: "2026-11-23",
+  },
+  {
+    slug: "keenable-keenablebot",
+    provider: "Keenable",
+    agent: "KeenableBot",
+    kind: "http-ua",
+    category: "ai-search",
+    providerSummary:
+      "Operates Keenable, a search index for AI agents; KeenableBot crawls public pages and publishes a per-token IP list.",
+    description: "Collects public pages to build and maintain the Keenable search index.",
+    userAgents: ["KeenableBot"],
+    robotsToken: "KeenableBot",
+    rdnsSuffixes: [],
+    ipRangeUrls: ["https://app.keenable.ai/bot/keenablebot.json"],
+    staticIpRanges: [],
+    sources: [
+      { label: "Keenable crawlers", href: "https://docs.keenable.ai/crawlers" },
+      { label: "KeenableBot IP list", href: "https://app.keenable.ai/bot/keenablebot.json" },
+    ],
+    reviewedAt: "2026-11-23",
   },
   {
     slug: "xai-xai-searchbot",
@@ -864,6 +924,28 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     reviewedAt: "2026-11-05",
   },
   {
+    slug: "river-riverbot",
+    provider: "River AI",
+    agent: "RiverBot",
+    kind: "http-ua",
+    category: "training",
+    providerSummary:
+      "Operates River; RiverBot fetches pages it is given for model training and evaluation, and publishes IPs, rDNS and Web Bot Auth.",
+    description:
+      "Fetches public pages it is given to train and evaluate River's AI models; identifies itself and follows robots.txt.",
+    userAgents: ["RiverBot"],
+    robotsToken: "RiverBot",
+    rdnsSuffixes: ["bot.river.ai"],
+    signatureAgents: ["https://river.ai"],
+    ipRangeUrls: ["https://river.ai/riverbot.json"],
+    staticIpRanges: [],
+    sources: [
+      { label: "RiverBot", href: "https://river.ai/bot" },
+      { label: "RiverBot ranges", href: "https://river.ai/riverbot.json" },
+    ],
+    reviewedAt: "2026-11-23",
+  },
+  {
     slug: "google-google-cloudvertexbot",
     provider: "Google",
     agent: "Google-CloudVertexBot",
@@ -1023,6 +1105,23 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     reviewedAt: "2026-11-05",
   },
   {
+    slug: "mistral-mistralai-training",
+    provider: "Mistral",
+    agent: "MistralAI-Training",
+    kind: "http-ua",
+    category: "training",
+    providerSummary:
+      "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index, MistralAI-Training collects training data.",
+    description: "Collects public pages to build datasets for training Mistral's generative AI models.",
+    userAgents: ["MistralAI-Training"],
+    robotsToken: "MistralAI-Training",
+    rdnsSuffixes: [],
+    ipRangeUrls: [],
+    staticIpRanges: [],
+    sources: [{ label: "Mistral crawler docs", href: "https://docs.mistral.ai/robots" }],
+    reviewedAt: "2026-11-15",
+  },
+  {
     slug: "moonshot-ai-kimibot",
     provider: "Moonshot AI",
     agent: "KimiBot",
@@ -1074,6 +1173,23 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     staticIpRanges: [],
     sources: [{ label: "Zhipu AI", href: "https://www.zhipuai.cn/" }],
     reviewedAt: "2026-11-05",
+  },
+  {
+    slug: "elevenlabs-elevenlabs-crawler",
+    provider: "ElevenLabs",
+    agent: "ElevenlabsCrawler",
+    kind: "http-ua",
+    category: "training",
+    providerSummary:
+      "Operates ElevenLabs voice and agent products; ElevenlabsCrawler collects training data while ElevenlabsBot fetches pages for agent knowledge bases.",
+    description: "Collects public pages that may be used to train ElevenLabs' generative AI models.",
+    userAgents: ["ElevenlabsCrawler"],
+    robotsToken: "ElevenlabsCrawler",
+    rdnsSuffixes: [],
+    ipRangeUrls: [],
+    staticIpRanges: [],
+    sources: [{ label: "ElevenLabs bots", href: "https://elevenlabs.io/docs/bots" }],
+    reviewedAt: "2026-11-23",
   },
   {
     slug: "baidu-baiduspider",

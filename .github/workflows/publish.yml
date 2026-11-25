@@ -1,20 +1,14 @@
 name: Publish
 
-# 发布 @visdenda/ai-crawler-directory（公开 scoped 包）。
-#
-# 与 @visdenda/agent-watch 同一个机制：npm Trusted Publishing（OIDC），不需要任何
-# 长期令牌。一次性前置（在 npm 网页做）：包的 Settings → Trusted Publisher →
-# GitHub Actions，填 owner `liuliuliu-git`、repo `ai-crawler-directory`、
-# workflow 文件名 `publish.yml`。之后推 `v*` tag 即可发布。
-#
-# 为什么可以是 --provenance：本仓是公开仓库，sigstore 来源证明要求源码仓库公开。
-"on":
+# npm Trusted Publishing（OIDC）：一次性前置是在 npm 网页给本包配置
+# Trusted Publisher（owner Visdenda、repo ai-crawler-directory、workflow publish.yml）。
+# tag 由私有 monorepo 的镜像 workflow 在版本号变化时打；--provenance 只在公开仓可用。
+on:
   push:
     tags: ["v*"]
 
 permissions:
   contents: read
-  # OIDC：npm 用这个权限签发短期发布凭证
   id-token: write
 
 jobs:
@@ -25,7 +19,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          # Trusted Publishing 要求 npm CLI >= 11.5.1；Node 26 自带 npm 已达标。
           node-version: 26
           registry-url: https://registry.npmjs.org
           cache: npm

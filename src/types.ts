@@ -39,6 +39,8 @@ export interface CrawlerDirectoryEntry {
   robotsToken: string;
   /** Reverse-DNS suffixes published by the vendor; empty means "not published". */
   rdnsSuffixes: string[];
+  /** Web Bot Auth `Signature-Agent` origins (https, no path); empty means "not published". */
+  signatureAgents?: string[];
   /** Vendor endpoints that publish IP ranges (JSON). */
   ipRangeUrls: string[];
   /** Static ranges published inline by the vendor. */

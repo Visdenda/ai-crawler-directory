@@ -19,6 +19,13 @@ const isStringArray = (value: unknown, maxItems: number, maxLength: number): val
 const isHttpsUrl = (value: unknown): value is string =>
   typeof value === "string" && value.startsWith("https://") && URL.canParse(value);
 
+/** Web Bot Auth Signature-Agent must be a bare https origin (no path/query/hash). */
+const isHttpsOrigin = (value: unknown): value is string => {
+  if (!isHttpsUrl(value)) return false;
+  const url = new URL(value);
+  return url.origin === value.replace(/\/$/, "");
+};
+
 /**
  * Structural validation for the directory seed. Returns one message per problem
  * (empty array = valid). The published dataset is validated in `directory.ts`
@@ -55,6 +62,15 @@ export const validateDirectory = (entries: ReadonlyArray<unknown>): string[] => 
     }
     if (!isNonEmptyString(entry.robotsToken, 64)) issues.push(at("robotsToken is empty"));
     if (!isStringArray(entry.rdnsSuffixes, 8, 64)) issues.push(at("invalid rdnsSuffixes"));
+    if (entry.signatureAgents !== undefined) {
+      if (
+        !Array.isArray(entry.signatureAgents) ||
+        entry.signatureAgents.length > 4 ||
+        !entry.signatureAgents.every(isHttpsOrigin)
+      ) {
+        issues.push(at("invalid signatureAgents"));
+      }
+    }
     if (!isStringArray(entry.staticIpRanges, 32, 64)) issues.push(at("invalid staticIpRanges"));
     if (
       !Array.isArray(entry.ipRangeUrls) ||
