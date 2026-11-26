@@ -9,11 +9,12 @@
     "strict": true,
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "types": [
-      "node"
-    ]
+    // 这个包是唯一会 emit 的 tsconfig（build 走 tsc），因此 buildinfo 分两份：
+    // build 的 emit 与 typecheck 的 --noEmit 选项不同，共用一份会互相作废，
+    // 每次都退化成全量检查。两份都落在 .tsc-cache（turbo 的 outputs 只认这个目录）。
+    "incremental": true,
+    "tsBuildInfoFile": ".tsc-cache/build.tsbuildinfo",
+    "types": ["node"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
