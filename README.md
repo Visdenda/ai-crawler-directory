@@ -53,22 +53,22 @@ const csv = toCsv();
 
 ## What is in an entry
 
-| Field | Meaning |
-| --- | --- |
-| `slug` | Stable URL slug; the website page is `/crawlers/{slug}` |
-| `provider` | Company that operates the crawler |
-| `agent` | Canonical user-agent token (case-sensitive) |
-| `kind` | `http-ua` (sends HTTP requests) or `robots-token` (robots.txt only) |
-| `category` | `answer-fetch`, `ai-search`, `training`, `search-engine`, `ads` or `unknown` |
-| `description` | What triggers the fetch, in plain language |
-| `userAgents` | User-agent substrings documented by the vendor |
-| `robotsToken` | Value to use in a robots.txt `User-agent:` line |
-| `rdnsSuffixes` | Reverse-DNS suffixes **if the vendor publishes them**; empty means “not published” |
+| Field             | Meaning                                                                                             |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| `slug`            | Stable URL slug; the website page is `/crawlers/{slug}`                                             |
+| `provider`        | Company that operates the crawler                                                                   |
+| `agent`           | Canonical user-agent token (case-sensitive)                                                         |
+| `kind`            | `http-ua` (sends HTTP requests) or `robots-token` (robots.txt only)                                 |
+| `category`        | `answer-fetch`, `ai-search`, `training`, `search-engine`, `ads` or `unknown`                        |
+| `description`     | What triggers the fetch, in plain language                                                          |
+| `userAgents`      | User-agent substrings documented by the vendor                                                      |
+| `robotsToken`     | Value to use in a robots.txt `User-agent:` line                                                     |
+| `rdnsSuffixes`    | Reverse-DNS suffixes **if the vendor publishes them**; empty means “not published”                  |
 | `signatureAgents` | Web Bot Auth `Signature-Agent` origins (https, no path); empty means “no signed identity published” |
-| `ipRangeUrls` | Vendor endpoints that publish IP ranges (JSON) |
-| `staticIpRanges` | Ranges the vendor lists inline |
-| `sources` | Vendor documentation backing the entry (https only) |
-| `reviewedAt` | Date a human last checked the entry against vendor docs |
+| `ipRangeUrls`     | Vendor endpoints that publish IP ranges (JSON)                                                      |
+| `staticIpRanges`  | Ranges the vendor lists inline                                                                      |
+| `sources`         | Vendor documentation backing the entry (https only)                                                 |
+| `reviewedAt`      | Date a human last checked the entry against vendor docs                                             |
 
 ## Categories
 
@@ -82,7 +82,7 @@ const csv = toCsv();
 ## Methodology
 
 1. **A vendor source for every entry.** Each entry links the vendor page that names the crawler. The seed is validated at import time: a missing source, a non-https source, a duplicate slug/agent or a malformed date fails the build.
-2. **Network data only when published.** Reverse-DNS suffixes and IP ranges are recorded only when the vendor publishes them. A blank field means “not published”; a hit is then *not checked*, which is not the same as *forged*.
+2. **Network data only when published.** Reverse-DNS suffixes and IP ranges are recorded only when the vendor publishes them. A blank field means “not published”; a hit is then _not checked_, which is not the same as _forged_.
 3. **Re-reviewed on a rolling basis.** Every entry carries `reviewedAt`. On the website, entries older than 90 days get a stale badge until they are reviewed again. Nothing is silently dropped.
 
 A matching user agent is not proof of identity — any client can send the string. When a vendor publishes network data, compare the request against it before trusting the hit.

@@ -17,7 +17,10 @@ test("the published seed is structurally valid", () => {
 });
 
 test("entries are unique by slug and agent", () => {
-  assert.equal(new Set(CRAWLER_DIRECTORY.map((entry) => entry.slug)).size, CRAWLER_DIRECTORY.length);
+  assert.equal(
+    new Set(CRAWLER_DIRECTORY.map((entry) => entry.slug)).size,
+    CRAWLER_DIRECTORY.length,
+  );
   assert.equal(
     new Set(CRAWLER_DIRECTORY.map((entry) => entry.agent)).size,
     CRAWLER_DIRECTORY.length,
@@ -40,7 +43,10 @@ test("robots-token entries never enter the user-agent matching list", () => {
 test("lookups and token lists work", () => {
   const gptbot = crawlerEntryByAgent("GPTBot", CRAWLER_DIRECTORY);
   assert.equal(gptbot?.provider, "OpenAI");
-  assert.equal(new Set(robotsTokensOf(CRAWLER_DIRECTORY)).size, robotsTokensOf(CRAWLER_DIRECTORY).length);
+  assert.equal(
+    new Set(robotsTokensOf(CRAWLER_DIRECTORY)).size,
+    robotsTokensOf(CRAWLER_DIRECTORY).length,
+  );
 });
 
 test("CSV export has a BOM, CRLF rows and one row per entry", () => {
@@ -52,7 +58,9 @@ test("CSV export has a BOM, CRLF rows and one row per entry", () => {
 });
 
 test("committed data files match the seed", () => {
-  const payload = JSON.parse(readFileSync(new URL("../data/crawlers.json", import.meta.url), "utf8"));
+  const payload = JSON.parse(
+    readFileSync(new URL("../data/crawlers.json", import.meta.url), "utf8"),
+  );
   assert.equal(payload.version, CRAWLER_DIRECTORY_VERSION);
   assert.equal(payload.count, CRAWLER_DIRECTORY.length);
   assert.equal(payload.license, "CC-BY-4.0");

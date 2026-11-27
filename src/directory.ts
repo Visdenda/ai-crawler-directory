@@ -1112,7 +1112,8 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     category: "training",
     providerSummary:
       "Operates Le Chat; MistralAI-User fetches pages for user questions, MistralAI-Index maintains its search index, MistralAI-Training collects training data.",
-    description: "Collects public pages to build datasets for training Mistral's generative AI models.",
+    description:
+      "Collects public pages to build datasets for training Mistral's generative AI models.",
     userAgents: ["MistralAI-Training"],
     robotsToken: "MistralAI-Training",
     rdnsSuffixes: [],
@@ -1182,7 +1183,8 @@ export const CRAWLER_DIRECTORY: CrawlerDirectoryEntry[] = [
     category: "training",
     providerSummary:
       "Operates ElevenLabs voice and agent products; ElevenlabsCrawler collects training data while ElevenlabsBot fetches pages for agent knowledge bases.",
-    description: "Collects public pages that may be used to train ElevenLabs' generative AI models.",
+    description:
+      "Collects public pages that may be used to train ElevenLabs' generative AI models.",
     userAgents: ["ElevenlabsCrawler"],
     robotsToken: "ElevenlabsCrawler",
     rdnsSuffixes: [],

@@ -21,7 +21,10 @@ const payload = {
 };
 
 await mkdir(new URL("../data/", import.meta.url), { recursive: true });
-await writeFile(new URL("../data/crawlers.json", import.meta.url), `${JSON.stringify(payload, null, 2)}\n`);
+await writeFile(
+  new URL("../data/crawlers.json", import.meta.url),
+  `${JSON.stringify(payload, null, 2)}\n`,
+);
 await writeFile(new URL("../data/crawlers.csv", import.meta.url), toCsv());
 
 console.log(`wrote ${CRAWLER_DIRECTORY.length} entries (version ${CRAWLER_DIRECTORY_VERSION})`);

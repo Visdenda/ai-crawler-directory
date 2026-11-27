@@ -34,7 +34,9 @@ const HEADERS = [
 ] as const;
 
 /** One row per crawler; multi-value fields are joined with `; `. */
-export const toCsv = (entries: ReadonlyArray<CrawlerDirectoryEntry> = CRAWLER_DIRECTORY): string => {
+export const toCsv = (
+  entries: ReadonlyArray<CrawlerDirectoryEntry> = CRAWLER_DIRECTORY,
+): string => {
   const rows = entries.map((entry) => [
     entry.slug,
     entry.provider,
